@@ -4,6 +4,26 @@
 	<title>TEXT INFOR CHAT</title>
 </head>
 <body>
+	<form action="/my-url">
+	  <button>Send</button>
+	</form>
+
+<script>
+  $("form").submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: "/my-url",
+      data: {
+      	text:"text"
+      },
+	  type: "POST", // if you want to send data via the "data" property change this to "POST". This can be omitted otherwise
+      success: function(responseData) {
+      	console.log(responseData);
+      },
+      error: console.error
+    });
+  });
+</script>
 
 </body>
 </html>

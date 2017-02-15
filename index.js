@@ -33,9 +33,15 @@ app.get('/', function (req, res) {
 	res.send('hello world i am a secret bot')
 })
 
-router.get('/messgae',function(req,res){
-	res.redirect('/index');
-})
+app.get("/my-url", function(req, res) {
+    // if you chose to send data as a query in the URL
+    console.log(req.query.q);
+    // if you chose to send data as JSON
+    console.log(req.body.q);
+ 
+    // finally, respond to the client
+    res.send("Okay");
+});
 
 // for facebook verification
 app.get('/webhook/', function (req, res) {
