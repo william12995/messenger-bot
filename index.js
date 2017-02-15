@@ -15,6 +15,10 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 
+var mongoose = require('mongoose');
+var FB = mongoose.model('fb');
+require('./db');
+
 app.set('port', (process.env.PORT || 1209))
 
 // parse application/x-www-form-urlencoded
@@ -52,6 +56,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			console.log("=="+sender);
+			adduser(sender);
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
@@ -140,6 +145,22 @@ function sendGenericMessage(sender) {
 			console.log('Error: ', response.body.error)
 		}
 	})
+}
+
+function adduser(sender) {
+    FB.findOne({
+        id: sender
+    }).exec(function(err, result) {
+        if (result) {
+            console.log( ' id  has already existed.');
+            return;
+        }
+        new FB({
+            id: sender
+        }).save(function(err, r) {
+            if (err) console.log(err);
+        });
+    });
 }
 
 // spin spin sugar
