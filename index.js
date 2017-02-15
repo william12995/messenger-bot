@@ -71,6 +71,7 @@ const token = "EAAUnePl06eUBAAgs9CKbAr2Bzl0BhM4tPg5MkFit2Burq0Pj0Nxzk8qktSnKiwJZ
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
 	console.log(sender);
+	console.log("");
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 		qs: {access_token:token},
