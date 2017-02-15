@@ -12,11 +12,11 @@
   $("form").submit(function(e) {
     e.preventDefault();
     $.ajax({
-      url: "/my-url",
+      url: "/message",
       data: {
       	text:"text"
       },
-	  type: "POST", // if you want to send data via the "data" property change this to "POST". This can be omitted otherwise
+	  type: "POST", 
       success: function(responseData) {
       	console.log(responseData);
       },

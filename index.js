@@ -33,16 +33,7 @@ app.get('/', function (req, res) {
 	res.send('hello world i am a secret bot')
 })
 
-app.get("/my-url", function(req, res) {
-    // if you chose to send data as a query in the URL
-    console.log(req.query.q);
-    // if you chose to send data as JSON
-    console.log(req.body.q);
- 
-    // finally, respond to the client
-    res.send("Okay");
-    res.render('./views/index');
-});
+
 
 // for facebook verification
 app.get('/webhook/', function (req, res) {
@@ -64,7 +55,7 @@ app.post('/webhook/', function (req, res) {
 			let text = event.message.text
 			if (text === 'Generic'){ 
 				console.log("welcome to chatbot")
-				//sendGenericMessage(sender)
+				sendGenericMessage(sender)
 				continue
 			}
 			console.log("=="+sender);
