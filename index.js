@@ -41,7 +41,7 @@ app.get("/my-url", function(req, res) {
  
     // finally, respond to the client
     res.send("Okay");
-    res.redirect('./views/index');
+    res.render('./views/index');
 });
 
 // for facebook verification
