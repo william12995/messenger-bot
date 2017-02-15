@@ -86,6 +86,9 @@ function sendTextMessage(sender, text) {
 	})
 
 	console.log(messageData);
+	console.log("==================================================");
+	console.log(response.body);
+	console.log("==================================================");
 }
 
 function sendGenericMessage(sender) {
