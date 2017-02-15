@@ -13,7 +13,8 @@ require('./db');
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
-const app = express()
+const app = express();
+var router = express.Router();
 
 var mongoose = require('mongoose');
 var FB = mongoose.model('User');
@@ -30,6 +31,10 @@ app.use(bodyParser.json())
 // index
 app.get('/', function (req, res) {
 	res.send('hello world i am a secret bot')
+})
+
+router.get('/messgae',function(req,res){
+	res.redirect('/index');
 })
 
 // for facebook verification
