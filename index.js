@@ -81,14 +81,16 @@ function sendTextMessage(sender, text) {
 		if (error) {
 			console.log('Error sending messages: ', error)
 		} else if (response.body.error) {
+			console.log(response.body);
+			console.log("==================================================");
 			console.log('Error: ', response.body.error)
+
 		}
 	})
 
 	console.log(messageData);
 	console.log("==================================================");
-	console.log(response.body);
-	console.log("==================================================");
+
 }
 
 function sendGenericMessage(sender) {
