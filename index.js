@@ -16,7 +16,7 @@ const request = require('request')
 const app = express()
 
 var mongoose = require('mongoose');
-var FB = mongoose.model('userSchema');
+var FB = mongoose.model('User');
 require('./db');
 
 app.set('port', (process.env.PORT || 1209))
