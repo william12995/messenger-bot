@@ -9,7 +9,7 @@ i have added console.log on line 48
 
  */
 'use strict'
-
+require('./db');
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -17,7 +17,7 @@ const app = express()
 
 var mongoose = require('mongoose');
 var FB = mongoose.model('User');
-require('./db');
+
 
 app.set('port', (process.env.PORT || 1209))
 
