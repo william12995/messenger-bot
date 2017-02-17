@@ -60,6 +60,7 @@ app.post('/webhook/', function (req, res) {
 			}
 			console.log("=="+sender);
 			//adduser(sender);
+			if(sender == "575623689313399") continue;
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
