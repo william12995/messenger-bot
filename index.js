@@ -59,7 +59,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			console.log("=="+sender);
-			adduser(sender);
+			//adduser(sender);
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
